@@ -1,0 +1,74 @@
+\documentclass[12pt,  oneside] {article} 
+\usepackage{geometry, amsmath, amssymb, graphicx, indentfirst} 
+\usepackage{ctex, fontspec, pifont, ulem, multicol} 
+\usepackage{tikz, pgfplots, pgf-pie, verbatim, enumitem} 
+%page layout:geometry, indentfirst, multicol, verbatim(comment), enumitem 
+%math and text: amsmath, amssymb, pgfplots, pgf-pie 
+%figure: graphicx, tikz, pgfplots, pgf-pie, 
+
+% 页面设置 
+\geometry{a4paper, landscape, left=1cm, right=1cm, top=1cm, bottom=1cm} %页边距
+\pagestyle{empty} %无页眉页脚 
+
+% 设置中英文字体 
+\setCJKfamilyfont{STKaiti}{STKaiti} 
+\newcommand{\STKaiti}{\CJKfamily{STKaiti}} 
+\setCJKmainfont{STKaiti}%中文字体 
+\setmainfont{Palatino} %英文字体 
+
+%段落设置 
+\linespread{1.0} %行距
+\setlength{\parindent}{0em} %首行缩进
+\setlength{\parskip}{0pt} %段间距
+\setlist[itemize]{leftmargin=0.7cm, noitemsep, topsep=0pt} %0.7项目与段落对齐，noitemsep无项目间距, 顶部无间距
+\setenumerate{leftmargin=0.7cm, noitemsep, topsep=0pt} %0.7项目编号与段落对齐，noitemsep无项目间距, 顶部无间距
+\setlength{\multicolsep}{-0em} %多列项目顶部间距
+\setlength{\columnsep}{0.5cm} %多列时列间距 
+\setlength{\columnseprule}{0.1pt}%列间分隔线宽度 
+
+%自定义间距与波浪线 
+\newcommand{\nls}{\\[5pt]} %短行间距
+\newcommand{\nll}{\nls\nls} %较长行间距 
+\newcommand{\uws}{\uwave{\hspace*{1cm}}} %短波浪线
+\newcommand{\uwl}{\uwave{\hspace*{3cm}}} %较长波浪线
+\newcommand{\uwL}{\uwave{\hspace*{5cm}}} %长波浪线
+\newcommand{\setmulticolskips}{ %设置多列项目中公式周边间距，只能在multicol环境内设置
+	\setlength\abovedisplayshortskip{-0em} %短公式顶部适用
+	\setlength\belowdisplayshortskip{-0em} %短公式底部适用
+	\setlength\abovedisplayskip{-0.5em} %长公式顶部适用
+	\setlength\belowdisplayskip{-0.5em}} %长公式底部适用
+
+\newcommand{\TimesPlot}{
+	\begin{tikzpicture}[scale=0.6]
+		\draw [step=1cm, densely dashed, line width = 0.5pt] (0,0) grid (3,-2);
+		\draw [line width = 1pt](-0.05,0.15) -- (3.1,0.15);
+		\draw [line width = 1pt](-0.05,0.1) -- (-0.4,-1.5);
+		\draw [step=1cm, densely dashed, line width = 0.5pt, xshift=-0.35cm] (-1,0) grid (0,-1);
+		\draw [step=1cm, densely dashed, line width = 0.5pt, yshift=0.3cm] (0,0) grid (3,1);
+		\draw [line width = 0.5pt](-0.05,-2.15) -- (3.1,-2.15);
+		\draw [step=1cm, densely dashed, line width = 0.5pt, yshift=-0.3cm] (0,-2) grid (3,-4);
+		\draw [line width = 0.5pt](-0.05,-4.45) -- (3.1,-4.45);
+		\draw [step=1cm, densely dashed, line width = 0.5pt, yshift=-0.6cm] (0,-4) grid (3,-5);
+	\end{tikzpicture}}
+\newcommand{\PutALine}{
+	\TimesPlot \hspace*{0.55cm}	\TimesPlot \hspace*{0.55cm}
+	\TimesPlot \hspace*{0.55cm}	\TimesPlot \hspace*{0.55cm}
+	\TimesPlot \hspace*{0.55cm}	\TimesPlot \hspace*{0.55cm}	
+	\TimesPlot \hspace*{0.55cm}	\TimesPlot}
+
+\begin{document} 
+\PutALine 
+\ 
+\begin{tikzpicture}[scale=0.6]
+	\node [rotate=-90] {\footnotesize 除法竖式草稿纸\hspace*{1.5cm}};
+\end{tikzpicture}
+\\[20pt]
+\PutALine \\[20pt]
+\PutALine \\[20pt]
+\PutALine
+\ 
+\begin{tikzpicture}[scale=0.6]
+	\node [rotate=-90] {\footnotesize \today};
+\end{tikzpicture}
+
+\end{document} 
